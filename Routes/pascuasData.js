@@ -2,7 +2,7 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 const router = express.Router();
-const filePath = path.join(process.cwd(), 'dataDestacados.json');
+const filePath = path.join(process.cwd(), 'pascuas.json');
 
 // Leer los productos desde el JSON
 const leerDatos = () => {
@@ -26,6 +26,7 @@ const guardarDatos = (productos) => {
 
 // **GET** - Obtener todos los productos
 router.get("/", (req, res) => {
+  
   const datos = leerDatos();
   res.json(datos);
 });
